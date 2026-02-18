@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Crown Chemical</title>
+    <link rel="stylesheet" href="admin-dashboard-styles.css">
+</head>
+<body class="admin-dashboard-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="admin-navbar">
+        <div class="admin-nav-container">
+            <div class="admin-logo">
+                <img src="pics/crown.png" alt="Crown Chemical">
+                <span class="admin-logo-text">Crown Chemical</span>
+            </div>
+
+            <div class="admin-user-info">
+                <span class="admin-username">👤 <span id="adminName">Admin</span></span>
+                <button class="btn-admin-logout" id="logoutBtn">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M6.5 16H3.5C2.96957 16 2.46086 15.7893 2.08579 15.4142C1.71071 15.0391 1.5 14.5304 1.5 14V4C1.5 3.46957 1.71071 2.96086 2.08579 2.58579C2.46086 2.21071 2.96957 2 3.5 2H6.5M12.5 13L16.5 9M16.5 9L12.5 5M16.5 9H6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="admin-main-container">
+        
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-menu">
+                <a href="#dashboard" class="admin-menu-item active" data-section="dashboard">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M2.5 7.5L10 2.5L17.5 7.5V16.25C17.5 16.5815 17.3683 16.8995 17.1339 17.1339C16.8995 17.3683 16.5815 17.5 16.25 17.5H3.75C3.41848 17.5 3.10054 17.3683 2.86612 17.1339C2.6317 16.8995 2.5 16.5815 2.5 16.25V7.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#products" class="admin-menu-item" data-section="products">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M16.6667 13.3333V6.66667L10 2.5L3.33333 6.66667V13.3333L10 17.5L16.6667 13.3333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Products</span>
+                </a>
+
+                <a href="#customers" class="admin-menu-item" data-section="customers">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M14.1667 17.5V15.8333C14.1667 14.9493 13.8155 14.1014 13.1904 13.4763C12.5652 12.8512 11.7174 12.5 10.8333 12.5H4.16667C3.28261 12.5 2.43477 12.8512 1.80964 13.4763C1.18452 14.1014 0.833333 14.9493 0.833333 15.8333V17.5M19.1667 17.5V15.8333C19.1662 15.0948 18.9204 14.3773 18.4679 13.7936C18.0154 13.2099 17.3819 12.793 16.6667 12.6083M13.3333 2.60833C14.0503 2.79192 14.6858 3.20892 15.1396 3.79359C15.5935 4.37827 15.8398 5.09736 15.8398 5.8375C15.8398 6.57764 15.5935 7.29673 15.1396 7.88141C14.6858 8.46608 14.0503 8.88308 13.3333 9.06667M10.8333 5.83333C10.8333 7.67428 9.34095 9.16667 7.5 9.16667C5.65905 9.16667 4.16667 7.67428 4.16667 5.83333C4.16667 3.99238 5.65905 2.5 7.5 2.5C9.34095 2.5 10.8333 3.99238 10.8333 5.83333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Customers</span>
+                </a>
+
+                <a href="#orders" class="admin-menu-item" data-section="orders">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4.16667 2.5V5.83333M15.8333 2.5V5.83333M2.5 9.16667H17.5M3.75 3.75H16.25C17.0784 3.75 17.75 4.42157 17.75 5.25V16.25C17.75 17.0784 17.0784 17.75 16.25 17.75H3.75C2.92157 17.75 2.25 17.0784 2.25 16.25V5.25C2.25 4.42157 2.92157 3.75 3.75 3.75Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Orders</span>
+                </a>
+
+                <a href="#newsletter" class="admin-menu-item" data-section="newsletter">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M2.5 5.83333L10 10.8333L17.5 5.83333M2.5 5.83333V14.1667C2.5 14.3877 2.5878 14.5996 2.74408 14.7559C2.90036 14.9122 3.11232 15 3.33333 15H16.6667C16.8877 15 17.0996 14.9122 17.2559 14.7559C17.4122 14.5996 17.5 14.3877 17.5 14.1667V5.83333M2.5 5.83333C2.5 5.61232 2.5878 5.40036 2.74408 5.24408C2.90036 5.0878 3.11232 5 3.33333 5H16.6667C16.8877 5 17.0996 5.0878 17.2559 5.24408C17.4122 5.40036 17.5 5.61232 17.5 5.83333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Newsletter</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="admin-content">
+            
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="admin-section active">
+                <div class="admin-section-header">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's what's happening with your business today.</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #e3f2fd;">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="#0B9444">
+                                <path d="M4 24V10C4 8.89543 4.89543 8 6 8H26C27.1046 8 28 8.89543 28 10V24C28 25.1046 27.1046 26 26 26H6C4.89543 26 4 25.1046 4 24Z" fill="currentColor" opacity="0.2"/>
+                                <path d="M12 16L16 20L24 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Total Revenue</p>
+                            <h3 class="stat-value" id="totalRevenue">₦0</h3>
+                            <span class="stat-change positive">+12% from last month</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #f3e5f5;">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="#9c27b0">
+                                <circle cx="16" cy="16" r="12" fill="currentColor" opacity="0.2"/>
+                                <path d="M16 8V16L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Total Orders</p>
+                            <h3 class="stat-value" id="totalOrders">0</h3>
+                            <span class="stat-change positive">+8% from last month</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #fff3e0;">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="#ff9800">
+                                <path d="M8 16C8 11.5817 11.5817 8 16 8C20.4183 8 24 11.5817 24 16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16Z" fill="currentColor" opacity="0.2"/>
+                                <path d="M16 10V16L20 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Total Customers</p>
+                            <h3 class="stat-value" id="totalCustomers">0</h3>
+                            <span class="stat-change positive">+15% from last month</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #e8f5e9;">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="#4caf50">
+                                <path d="M6 12L16 6L26 12V24C26 24.5304 25.7893 25.0391 25.4142 25.4142C25.0391 25.7893 24.5304 26 24 26H8C7.46957 26 6.96086 25.7893 6.58579 25.4142C6.21071 25.0391 6 24.5304 6 24V12Z" fill="currentColor" opacity="0.2"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Newsletter Subscribers</p>
+                            <h3 class="stat-value" id="totalSubscribers">0</h3>
+                            <span class="stat-change positive">+23% from last month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Sales Overview</h3>
+                            <select id="salesPeriod" class="period-select">
+                                <option value="7">Last 7 days</option>
+                                <option value="30" selected>Last 30 days</option>
+                                <option value="90">Last 90 days</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Top Products</h3>
+                        </div>
+                        <div id="topProductsList" class="top-products-list">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="recent-orders-card">
+                    <div class="card-header">
+                        <h3>Recent Orders</h3>
+                        <a href="#orders" class="view-all-link">View All →</a>
+                    </div>
+                    <div id="recentOrdersTable" class="orders-table">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Products Section -->
+            <section id="products-section" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Product Management</h1>
+                    <p>Manage your product inventory and pricing</p>
+                </div>
+
+                <div id="productsGrid" class="products-grid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Customers Section -->
+            <section id="customers-section" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Customer Management</h1>
+                    <p>View and manage your customer database</p>
+                </div>
+
+                <div class="customers-stats-row">
+                    <div class="customer-stat">
+                        <h4 id="customersTotalCount">0</h4>
+                        <p>Total Customers</p>
+                    </div>
+                    <div class="customer-stat">
+                        <h4 id="customersNewCount">0</h4>
+                        <p>New This Month</p>
+                    </div>
+                    <div class="customer-stat">
+                        <h4 id="customersReturningPercent">0%</h4>
+                        <p>Returning Rate</p>
+                    </div>
+                </div>
+
+                <div id="customersTable" class="data-table">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders-section" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Order Management</h1>
+                    <p>View and manage all orders</p>
+                </div>
+
+                <div class="orders-filter">
+                    <button class="filter-btn active" data-status="all">All Orders</button>
+                    <button class="filter-btn" data-status="pending">Pending</button>
+                    <button class="filter-btn" data-status="processing">Processing</button>
+                    <button class="filter-btn" data-status="completed">Completed</button>
+                    <button class="filter-btn" data-status="cancelled">Cancelled</button>
+                </div>
+
+                <div id="allOrdersTable" class="data-table">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section id="newsletter-section" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Newsletter Subscribers</h1>
+                    <p>Manage your email and phone subscribers</p>
+                </div>
+
+                <div class="newsletter-actions">
+                    <button class="btn-primary" onclick="CrownNewsletter.exportCSV()">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M15.75 11.25V13.875C15.75 14.0408 15.6842 14.1997 15.5669 14.3169C15.4497 14.4342 15.2908 14.5 15.125 14.5H2.875C2.70924 14.5 2.55027 14.4342 2.43306 14.3169C2.31585 14.1997 2.25 14.0408 2.25 13.875V11.25M5.25 7.5L9 11.25M9 11.25L12.75 7.5M9 11.25V2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Export CSV
+                    </button>
+                    <button class="btn-outline" onclick="CrownNewsletter.copyList()">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M15 6.75H8.25C7.42157 6.75 6.75 7.42157 6.75 8.25V15C6.75 15.8284 7.42157 16.5 8.25 16.5H15C15.8284 16.5 16.5 15.8284 16.5 15V8.25C16.5 7.42157 15.8284 6.75 15 6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.75 11.25H3C2.60218 11.25 2.22064 11.092 1.93934 10.8107C1.65804 10.5294 1.5 10.1478 1.5 9.75V3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H9.75C10.1478 1.5 10.5294 1.65804 10.8107 1.93934C11.092 2.22064 11.25 2.60218 11.25 3V3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Copy List
+                    </button>
+                </div>
+
+                <div class="newsletter-stats-row">
+                    <div class="newsletter-stat">
+                        <h4 id="subscribersTotal">0</h4>
+                        <p>Total Subscribers</p>
+                    </div>
+                    <div class="newsletter-stat">
+                        <h4 id="subscribersEmail">0</h4>
+                        <p>Email Subscribers</p>
+                    </div>
+                    <div class="newsletter-stat">
+                        <h4 id="subscribersPhone">0</h4>
+                        <p>Phone Subscribers</p>
+                    </div>
+                </div>
+
+                <div id="subscribersTable" class="data-table">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="admin-dashboard.js"></script>
+
+</body>
+</html>

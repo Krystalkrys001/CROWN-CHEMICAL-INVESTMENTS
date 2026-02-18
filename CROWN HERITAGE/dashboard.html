@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Crown Chemical</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth-styles.css">
+</head>
+<body class="theme_bumpa-container dashboard-page" style="--primary-color:#001821;">
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div>
+                    <a href="index.html">
+                        <img src="pics/crown.png" style="height: 100px; width: 100px;" alt="Crown Chemical Logo">
+                    </a>
+                </div>
+                
+                <div class="left-nav">
+                    <a class="back-link" href="index.html">← Continue Shopping</a>
+                    
+                    <span class="user-welcome">Hello, <strong class="user-name">User</strong></span>
+                    
+                    <button class="cart-btn" onclick="window.location.href='index.html#cart'">
+                        <svg width="21" height="22" viewBox="0 0 21 22" fill="none">
+                            <path d="M17.0662 20.2314C17.5375 20.2314 17.9196 19.8355 17.9196 19.3471C17.9196 18.8587 17.5375 18.4628 17.0662 18.4628C16.5949 18.4628 16.2129 18.8587 16.2129 19.3471C16.2129 19.8355 16.5949 20.2314 17.0662 20.2314Z" stroke="#0D1821" stroke-width="1.5"/>
+                            <path d="M7.67951 20.2314C8.15079 20.2314 8.53284 19.8355 8.53284 19.3471C8.53284 18.8587 8.15079 18.4628 7.67951 18.4628C7.20822 18.4628 6.82617 18.8587 6.82617 19.3471C6.82617 19.8355 7.20822 20.2314 7.67951 20.2314Z" stroke="#0D1821" stroke-width="1.5"/>
+                            <path d="M0.853516 1.66125H4.26685L6.55378 13.5019C6.63181 13.9091 6.84554 14.2748 7.15755 14.535C7.46956 14.7953 7.85998 14.9336 8.26045 14.9256H16.5548C16.9553 14.9336 17.3457 14.7953 17.6577 14.535C17.9698 14.2748 18.1835 13.9091 18.2615 13.5019L19.6268 6.08272H5.12018" stroke="#0D1821" stroke-width="1.5"/>
+                        </svg>
+                    </button>
+                    <div class="cart"><span class="count">0</span></div>
+                    
+                    <button class="logout-btn btn-icon" title="Logout">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5M13.3333 14.1667L17.5 10M17.5 10L13.3333 5.83333M17.5 10H7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="base-layout-page-content">
+        <main class="dashboard-main">
+            <div class="dashboard-container">
+                
+                <!-- Sidebar -->
+                <aside class="dashboard-sidebar">
+                    <div class="user-profile-card">
+                        <div class="user-avatar">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="#0B9444"/>
+                                <path d="M45 52V48C45 45.8783 44.1571 43.8434 42.6569 42.3431C41.1566 40.8429 39.1217 40 37 40H23C20.8783 40 18.8434 40.8429 17.3431 42.3431C15.8429 43.8434 15 45.8783 15 48V52M37 24C37 28.4183 33.4183 32 29 32C24.5817 32 21 28.4183 21 24C21 19.5817 24.5817 16 29 16C33.4183 16 37 19.5817 37 24Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="user-name">User Name</h3>
+                        <p class="user-email">user@email.com</p>
+                    </div>
+
+                    <nav class="dashboard-nav">
+                        <a href="#orders" class="nav-item active" data-section="orders">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 1V4M15 1V4M2 7H18M3 2H17C17.5523 2 18 2.44772 18 3V17C18 17.5523 17.5523 18 17 18H3C2.44772 18 2 17.5523 2 17V3C2 2.44772 2.44772 2 3 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>My Orders</span>
+                        </a>
+                        <a href="#addresses" class="nav-item" data-section="addresses">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M17.5 8.33333C17.5 14.1667 10 19.1667 10 19.1667C10 19.1667 2.5 14.1667 2.5 8.33333C2.5 6.34420 3.29018 4.43655 4.6967 3.03007C6.10322 1.62360 8.01088 0.833332 10 0.833332C11.9891 0.833332 13.8968 1.62360 15.3033 3.03007C16.7098 4.43655 17.5 6.34420 17.5 8.33333Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M10 10.8333C11.3807 10.8333 12.5 9.71405 12.5 8.33333C12.5 6.95262 11.3807 5.83333 10 5.83333C8.61929 5.83333 7.5 6.95262 7.5 8.33333C7.5 9.71405 8.61929 10.8333 10 10.8333Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Addresses</span>
+                        </a>
+                        <a href="#favorites" class="nav-item" data-section="favorites">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 17.5L2.5 10C0.833333 8.33333 0.833333 5 2.5 3.33333C4.16667 1.66667 7.5 1.66667 9.16667 3.33333L10 4.16667L10.8333 3.33333C12.5 1.66667 15.8333 1.66667 17.5 3.33333C19.1667 5 19.1667 8.33333 17.5 10L10 17.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Favorites</span>
+                        </a>
+                        <a href="#profile" class="nav-item" data-section="profile">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 17.5V15.8333C16.6667 14.9493 16.3155 14.1014 15.6904 13.4763C15.0652 12.8512 14.2174 12.5 13.3333 12.5H6.66667C5.78261 12.5 4.93477 12.8512 4.30964 13.4763C3.68452 14.1014 3.33333 14.9493 3.33333 15.8333V17.5M13.3333 5.83333C13.3333 7.67428 11.841 9.16667 10 9.16667C8.15905 9.16667 6.66667 7.67428 6.66667 5.83333C6.66667 3.99238 8.15905 2.5 10 2.5C11.841 2.5 13.3333 3.99238 13.3333 5.83333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Profile Settings</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="dashboard-content">
+                    
+                    <!-- Orders Section -->
+                    <section id="orders-section" class="dashboard-section active">
+                        <div class="section-header">
+                            <h2>My Orders</h2>
+                            <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                New Order
+                            </button>
+                        </div>
+
+                        <div class="orders-list">
+                            <!-- Orders will be loaded here by JavaScript -->
+                            <div class="empty-state">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="38" stroke="#E0E0E0" stroke-width="4"/>
+                                    <path d="M30 40H50M40 30V50" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
+                                </svg>
+                                <h3>No orders yet</h3>
+                                <p>Start shopping to see your orders here</p>
+                                <button class="btn btn-primary" onclick="window.location.href='index.html'">Start Shopping</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Addresses Section -->
+                    <section id="addresses-section" class="dashboard-section">
+                        <div class="section-header">
+                            <h2>Saved Addresses</h2>
+                            <button class="btn btn-primary btn-sm" onclick="alert('Add address feature coming soon!')">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Add Address
+                            </button>
+                        </div>
+
+                        <div class="addresses-grid">
+                            <!-- Addresses will be loaded here -->
+                            <div class="empty-state">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <path d="M40 10C32.6 10 25.8 13.4 20.8 18.8C15.8 24.2 12.5 31.4 12.5 39C12.5 52.5 40 70 40 70C40 70 67.5 52.5 67.5 39C67.5 31.4 64.2 24.2 59.2 18.8C54.2 13.4 47.4 10 40 10Z" stroke="#E0E0E0" stroke-width="4"/>
+                                    <circle cx="40" cy="38" r="10" stroke="#E0E0E0" stroke-width="4"/>
+                                </svg>
+                                <h3>No saved addresses</h3>
+                                <p>Add your delivery addresses for faster checkout</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Favorites Section -->
+                    <section id="favorites-section" class="dashboard-section">
+                        <div class="section-header">
+                            <h2>Favorite Products</h2>
+                        </div>
+
+                        <div class="favorites-grid">
+                            <!-- Favorites will be loaded here -->
+                            <div class="empty-state">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <path d="M40 65L15 40C10 35 10 25 15 20C20 15 30 15 35 20L40 25L45 20C50 15 60 15 65 20C70 25 70 35 65 40L40 65Z" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <h3>No favorites yet</h3>
+                                <p>Save products you love for easy access</p>
+                                <button class="btn btn-primary" onclick="window.location.href='index.html'">Browse Products</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Profile Section -->
+                    <section id="profile-section" class="dashboard-section">
+                        <div class="section-header">
+                            <h2>Profile Settings</h2>
+                        </div>
+
+                        <form id="profile-form" class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" name="fullName" placeholder="Your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" name="phone" placeholder="08012345678" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" name="email" class="user-email" disabled>
+                                <small>Email cannot be changed</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Company Name</label>
+                                <input type="text" name="companyName" placeholder="Your company (optional)">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Business Type</label>
+                                <select name="businessType">
+                                    <option value="individual">Individual</option>
+                                    <option value="retailer">Retailer</option>
+                                    <option value="hotel">Hotel</option>
+                                    <option value="restaurant">Restaurant</option>
+                                    <option value="company">Company/Corporation</option>
+                                    <option value="government">Government</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+
+                        <div class="danger-zone">
+                            <h3>Change Password</h3>
+                            <p>Update your password to keep your account secure</p>
+                            <button class="btn btn-outline" onclick="alert('Change password feature coming soon!')">Change Password</button>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-details">
+                <div class="info-group">
+                    <div class="group-one">
+                        <p class="header">CONTACT US</p>
+                        <p>📞 +2347079551515</p>
+                        <p>📍 Anambra, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <button class="floating-whatsapp" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.828.736 5.482 2.022 7.78L.697 30.697l7.144-1.88A15.928 15.928 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.512 0-4.921-.698-7.022-2.022l-.503-.3-5.214 1.368 1.393-5.091-.33-.522A13.267 13.267 0 012.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
+            <path d="M23.117 19.508c-.413-.207-2.439-1.204-2.818-1.341-.378-.138-.654-.207-.93.207-.275.413-1.068 1.341-1.31 1.617-.241.275-.482.31-.896.103-2.063-1.034-3.416-1.845-4.778-4.185-.362-.62.362-.575 1.034-1.916.113-.275.057-.516-.03-.723-.087-.207-.93-2.237-1.272-3.064-.334-.806-.673-.697-.93-.71-.24-.013-.516-.013-.792-.013s-.723.103-1.103.516c-.379.413-1.448 1.413-1.448 3.447s1.482 3.998 1.689 4.274c.207.275 2.917 4.453 7.066 6.243.988.426 1.758.68 2.359.871.991.315 1.893.27 2.607.164.795-.12 2.439-.998 2.784-1.963.344-.964.344-1.792.24-1.963-.103-.172-.378-.275-.792-.482z"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="auth-system.js"></script>
+    <script>
+        // Dashboard navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all nav items
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                
+                // Add active class to clicked item
+                item.classList.add('active');
+                
+                // Hide all sections
+                document.querySelectorAll('.dashboard-section').forEach(section => section.classList.remove('active'));
+                
+                // Show target section
+                const targetSection = item.dataset.section + '-section';
+                document.getElementById(targetSection).classList.add('active');
+            });
+        });
+
+        // Profile form submission
+        const profileForm = document.getElementById('profile-form');
+        if (profileForm) {
+            profileForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Profile update feature will be connected to backend!');
+            });
+        }
+    </script>
+</body>
+</html>
