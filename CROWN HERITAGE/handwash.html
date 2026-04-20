@@ -12,8 +12,8 @@
     <!-- Open Graph (for Facebook/WhatsApp sharing) -->
     <meta property="og:title" content="Hand Wash - Crown Chemical Investment Ltd-">
     <meta property="og:description" content="Professional hand wash solution. 1L (₦1,100). Nationwide delivery.">
-    <meta property="og:image" content="https://yoursite.netlify.app/pics/crown.png">
-    <meta property="og:url" content="https://yoursite.netlify.app">
+    <meta property="og:image" content="https://chproduct.ng/pics/crown.png">
+    <meta property="og:url" content="https://chproduct.ng/handwash.html">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -22,6 +22,7 @@
     
     <title>Hand Wash - Crown Chemical Investment Ltd </title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-fixes.css">
 </head>
 <body>
     <a href="index.html" class="back-btn" style="text-decoration: none;">
@@ -38,21 +39,21 @@
        <!-- part 4 -->
        <div class="small-Img-col">
         <img src="CH/ch handwash Banana.jpg" width="100%" alt="this is an image of hand wash 500ml" class="small-Img" 
-        data-size="1L Long" data-price="1100" alt ="hand wash 500ml">
+        data-size="500ml" data-price="960" alt ="hand wash 500ml">
     </div>
     <!-- end -->
 
          <!-- hello -->
         <div class="small-Img-col">
             <img src="CH/ch handwash lavender.jpg" width="100%" alt="this is an of image of hand wash" class="small-Img"
-            data-size="1L" data-price="1100" alt ="hand wash 500ml">
+            data-size="500ml" data-price="1130" alt ="hand wash 500ml">
         </div>
     <!-- end -->
 
       <!-- hello -->
         <div class="small-Img-col">
             <img src="CH/ch handwash Lexus.jpg" width="100%" alt="this is an image hand wash 500ml" class="small-Img" 
-            data-size="4L" data-price="1100" alt="hand wash 500ml">
+            data-size="500ml" data-price="1130" alt="hand wash 500ml">
         </div>
     <!-- end -->
 
@@ -68,9 +69,9 @@
   
 
   <div class="sizes">
-    <button class="size-btn active" data-price="1100" data-size="hand wash 500ml" data-name="Hand Wash" data-id="handwash">500ml</button>
-    <button class="size-btn active" data-price="1100" data-size="hand wash 500ml" data-name="Hand Wash" data-id="handwash">500ml</button>
-    <button class="size-btn" data-price="1100" data-size="hand wash 500ml" data-name="Hand Wash" data-id="handwash">500ml</button>
+    <button class="size-btn active" data-price="1130" data-size="hand wash 500ml" data-name="Hand Wash" data-id="handwash">500ml</button>
+    <button class="size-btn active" data-price="1130" data-size="hand wash 500ml" data-name="Hand Wash" data-id="handwash">500ml</button>
+    <button class="size-btn" data-price="1130" data-size="hand wash 500ml" data-name="Hand Wash" data-id="handwash">500ml</button>
 
   </div>
 
@@ -82,7 +83,8 @@
 
   <p class="price"> Price: ₦<span class="price-value"></span>
   </p>
-  <button class="add-to-cart-btn">Add to Cart</button>
+  <button class="add-to-cart-btn" onclick="addToCart('handwash-500ml', 'handwash', '500ml', '1100')">
+    Add to Cart</button>
   
 </div>
 
